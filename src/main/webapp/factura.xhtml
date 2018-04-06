@@ -1,0 +1,25 @@
+<ui:composition xmlns="http://www.w3.org/1999/xhtml"
+                xmlns:h="http://java.sun.com/jsf/html"
+                xmlns:f="http://java.sun.com/jsf/core"
+                xmlns:ui="http://java.sun.com/jsf/facelets"
+                xmlns:p="http://primefaces.org/ui"
+                xmlns:pe="http://primefaces.org/ui/extensions"
+                xmlns:fn="http://xmlns.jcp.org/jsp/jstl/functions"
+                template="/WEB-INF/template_empty.xhtml">
+
+    <ui:define name="title">#{applicationProperties.applicationName} - Visualizar factura</ui:define>
+    <ui:define name="content">
+        <div class="ui-g-12">
+            <div class="card card-w-title">
+                <h:form prependId="false">
+                    <p:panel visible="#{not empty visualizarFacturaBean.invoiceID}">
+                        <h1>Su Factura ya esta disponible</h1>
+                        <h2>Descargue sus archivos</h2>
+                        <p:commandButton value="Descargar PDF" icon="fa fa-file-pdf" action="#{visualizarFacturaBean.downloadPDF()}" ajax="false" style="height: 32px"/>
+                        <p:commandButton value="Descargar XML" icon="fa fa-code" action="#{visualizarFacturaBean.downloadXML()}" ajax="false" style="height: 32px"/>
+                    </p:panel>
+                </h:form>
+            </div>
+        </div>
+    </ui:define>
+</ui:composition>

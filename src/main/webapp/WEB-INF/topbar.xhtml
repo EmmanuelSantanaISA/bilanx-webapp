@@ -1,0 +1,69 @@
+<ui:composition 
+    xmlns="http://www.w3.org/1999/xhtml"
+    xmlns:f="http://java.sun.com/jsf/core"
+    xmlns:h="http://java.sun.com/jsf/html"
+    xmlns:ui="http://java.sun.com/jsf/facelets"
+    xmlns:p="http://primefaces.org/ui"
+    xmlns:pa="http://primefaces.org/paradise"
+    xmlns:pe="http://primefaces.org/ui/extensions">
+
+    <div class="topbar">
+        <h:link outcome="/home" styleClass="topbar-logo">
+            <p:graphicImage name="#{guestPreferences.layout == 'default' ? 'logo-isa.png' : 'logo-isa.png'}" style="border: 0px;" library="images" />
+        </h:link>
+
+        <a href="#" id="menu-button">
+            <i class="fal fa-bars"></i>
+        </a>
+
+        <a href="#" id="user-display">
+            <span class="username">#{sessionService.person.firstName}</span>
+            <pe:gravatar value="#{sessionService.person.username}" secure="true" notFound="mm"/>
+            <i class="fal fa-angle-down"></i>
+        </a>
+
+        <!--        <label for="topbar-search">
+                    <i class="fa fa-search topbar-search-icon"></i>
+                </label>
+                <input type="text" class="topbar-search" placeholder="Type your search here" id="topbar-search" />-->
+
+        <h:form>
+            <ul id="topbar-menu" class="fadeInDown animated">
+                <li>
+                    <a href="#">
+                        <i class="topbar-icon fa fa-fw fa-user"></i>
+                        <span class="topbar-item-name">Perfil</span>
+                    </a>
+
+                </li>
+                <li>
+                    <p:commandLink id="conf" action="store-configuration?faces-redirect=true">
+                        <i class="topbar-icon fa fa-fw fa-cog"></i>
+                        <span class="topbar-item-name">Configuracion</span>
+                    </p:commandLink>
+                </li>
+                <li>
+                    <p:commandLink id="Logout" action="#{sessionService.logout()}">
+                        <i class="topbar-icon fa fa-fw fa-sign-out"></i>
+                        <span class="topbar-item-name">Salir</span>
+                    </p:commandLink>
+                </li>
+                <!--            <li>
+                                <a href="#">
+                                    <i class="topbar-icon material-icons animated swing fa fa-fw fa-envelope-o"></i>
+                                    <span class="topbar-item-name">Messages</span>
+                                    <span class="topbar-badge animated rubberBand">4</span>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#">
+                                    <i class="topbar-icon fa fa-fw fa-bell-o"></i>
+                                    <span class="topbar-item-name">Notifications</span>
+                                    <span class="topbar-badge animated rubberBand">2</span>
+                                </a>
+                            </li>-->
+            </ul>
+        </h:form>
+    </div>
+
+</ui:composition>

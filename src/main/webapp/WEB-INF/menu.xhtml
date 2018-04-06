@@ -1,0 +1,40 @@
+<ui:composition 
+    xmlns="http://www.w3.org/1999/xhtml"
+    xmlns:f="http://java.sun.com/jsf/core"
+    xmlns:h="http://java.sun.com/jsf/html"
+    xmlns:ui="http://java.sun.com/jsf/facelets"
+    xmlns:p="http://primefaces.org/ui"
+    xmlns:pv="http://primefaces.org/paradise">
+
+    <div class="layout-menu-wrapper #{guestPreferences.darkMenu ? 'layout-menu-dark' : null}">
+        <div class="nano">
+            <div class="nano-content sidebar-scroll-content">
+                <div class="layout-menu-container">
+                    <h:form id="menuform">
+                        <div class="mobile-search">
+                            <i class="fa fa-fw fa-search topbar-search-icon"></i>
+                            <input type="text" class="topbar-search" placeholder="Type your search here"/>
+                        </div>
+
+                        <pv:menu>
+                            <p:menuitem ajax="false" value="Inicio" icon="#{iconsBean.iconStyle} fa-home #{iconsBean.FALG} fa-fw" outcome="home?faces-redirect=true" />
+                            <p:submenu rendered="#{menuBean.productsVisible}" label="Productos" icon="#{iconsBean.iconStyle} fa-lemon #{iconsBean.FALG} fa-fw"  >
+                                <p:menuitem  value="Ver productos" icon="#{iconsBean.iconStyle} fa-lemon #{iconsBean.FALG} fa-fw"  outcome="products?faces-redirect=true" ajax="false"/>
+                                <p:menuitem  value="Departamentos"  icon="#{iconsBean.iconStyle} fa-sitemap #{iconsBean.FALG} fa-fw" outcome="departments?faces-redirect=true"  ajax="false"/>
+                            </p:submenu>
+                            <p:menuitem rendered="#{menuBean.ordersVisible}" value="Pedidos" icon="#{iconsBean.iconStyle} fa-shopping-bag #{iconsBean.FALG} fa-fw" outcome="orders?faces-redirect=true" ajax="false" />
+                            <p:menuitem rendered="#{menuBean.driversVisible}" value="Repartidores" icon="#{iconsBean.iconStyle} fa-car #{iconsBean.FALG} fa-fw" outcome="drivers?faces-redirect=true" ajax="false"/>
+                            <p:menuitem rendered="#{menuBean.storesVisible}" value="Tiendas" icon="#{iconsBean.iconStyle} fa-building #{iconsBean.FALG} fa-fw" outcome="stores?faces-redirect=true" ajax="false"/>
+                            <p:menuitem rendered="#{menuBean.zonesVisible}" value="Zonas" icon="#{iconsBean.iconStyle} fa-map-marker #{iconsBean.FALG} fa-fw" outcome="zones?faces-redirect=true" ajax="false"/>
+                            <p:submenu rendered="#{menuBean.providersVisible}" label="Proveedores" icon="#{iconsBean.iconStyle} fa-truck #{iconsBean.FALG} fa-fw"  >
+                                <p:menuitem  value="Ver proveedores" icon="#{iconsBean.iconStyle} fa-truck #{iconsBean.FALG} fa-fw"  outcome="providers?faces-redirect=true" ajax="false"/>
+                                <p:menuitem  value="Pedidos"  icon="#{iconsBean.iconStyle} fa-shopping-bag #{iconsBean.FALG} fa-fw" outcome="providers-orders?faces-redirect=true"  ajax="false"/>
+                            </p:submenu>
+                        </pv:menu>
+                    </h:form>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</ui:composition>

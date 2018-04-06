@@ -1,0 +1,34 @@
+<ui:composition 
+    xmlns="http://www.w3.org/1999/xhtml"
+    xmlns:ui="http://java.sun.com/jsf/facelets"
+    xmlns:p="http://primefaces.org/ui">
+
+    <div class="card">
+        <!--<h:form>-->
+        <p:menu toggleable="false" style="width: 100%">
+            <p:submenu label="Acceso">
+                <p:menuitem value="Usuarios" action="store-configuration-users?faces-redirect=true" icon="fa fa-users" immediate="true" ajax="false"/>
+                <p:menuitem value="Roles" action="store-configuration-roles?faces-redirect=true" icon="fa fa-list-alt" immediate="true" ajax="false"/>
+            </p:submenu>
+            <p:submenu label="Pedidos">
+                <p:menuitem value="Horarios" action="store-configuration-users?faces-redirect=true" icon="fa fa-clock" ajax="false"/>
+                <p:menuitem value="Estados" action="store-configuration-users?faces-redirect=true" icon="fa fa-check" ajax="false"/>
+                <p:menuitem value="Metodos de pago" action="store-configuration-users?faces-redirect=true" icon="fa fa-credit-card" ajax="false"/>
+            </p:submenu>
+            <p:submenu label="CEDIS">
+                <p:menuitem value="Tipos de transacciones" action="store-configuration-users?faces-redirect=true" icon="fa fa-exchange" ajax="false"/> 
+            </p:submenu>
+            <p:submenu label="Repartidores">
+                <p:menuitem value="Tipos de transacciones" action="store-configuration-users?faces-redirect=true" icon="fa fa-exchange" ajax="false"/>
+            </p:submenu>
+            <p:submenu label="Proveedores">
+                <p:menuitem value="Tipos de transacciones" action="store-configuration-users?faces-redirect=true" icon="fa fa-exchange" ajax="false"/> 
+            </p:submenu>
+            <p:submenu label="Contactos">
+                <p:menuitem value="Tipos de contacto" action="store-configuration-users?faces-redirect=true" icon="fa fa-phone" ajax="false"/>
+            </p:submenu>
+        </p:menu>
+        <!--</h:form>-->
+    </div>
+
+</ui:composition>
