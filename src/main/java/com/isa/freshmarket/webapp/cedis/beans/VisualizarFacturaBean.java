@@ -38,6 +38,9 @@ public class VisualizarFacturaBean implements Serializable {
                 .getRequest();
 
         invoiceID = request.getParameter("factura");
+        if (invoiceID == null) {
+            showMessage("Atencion", "La factura que buscas, no existe", FacesMessage.SEVERITY_WARN);
+        }
     }
 
     public void downloadPDF() throws IOException {
