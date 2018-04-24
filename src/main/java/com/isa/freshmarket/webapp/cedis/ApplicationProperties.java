@@ -17,7 +17,7 @@ import javax.faces.bean.SessionScoped;
 @SessionScoped
 public class ApplicationProperties implements Serializable {
 
-    private String applicationName = "Facturacion";
+    private String applicationName = "Bilanx";
     private String applicationVersion = "1.0";
     private String supportEmail = "contacto@isasistemas.com";
 

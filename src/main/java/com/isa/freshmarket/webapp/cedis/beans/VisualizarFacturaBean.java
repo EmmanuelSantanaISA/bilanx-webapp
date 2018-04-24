@@ -6,7 +6,6 @@
 package com.isa.freshmarket.webapp.cedis.beans;
 
 import com.isa.facturacion.api.client.Facturas;
-import com.isa.facturacion.api.model.ComprobanteDTO;
 import java.io.IOException;
 import java.io.OutputStream;
 import java.io.Serializable;
