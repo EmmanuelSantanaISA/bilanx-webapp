@@ -16,7 +16,7 @@
                 <h:form prependId="false">
                     <p:growl autoUpdate="true" id="growl" showDetail="true"/>
                     <p:panel visible="#{not empty visualizarFacturaBean.invoiceID}">
-                        <h1>Estos son los archivos de su factura</h1>
+                        <h1 style="font-weight: 300">Estos son los archivos de su factura</h1>
                         <p:commandButton value="Descargar PDF" icon="fa fa-file-pdf" action="#{visualizarFacturaBean.downloadPDF()}" ajax="false" style="height: 32px"/>
                         <p:commandButton value="Descargar XML" icon="fa fa-code" action="#{visualizarFacturaBean.downloadXML()}" ajax="false" style="height: 32px"/>
                     </p:panel>

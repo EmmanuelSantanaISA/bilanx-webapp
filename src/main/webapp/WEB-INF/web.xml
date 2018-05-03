@@ -24,7 +24,7 @@
         <param-value>true</param-value>
     </context-param>
     <welcome-file-list>
-        <welcome-file>factura.xhtml</welcome-file>
+        <welcome-file>register.xhtml</welcome-file>
     </welcome-file-list>
     <context-param>
         <param-name>javax.faces.STATE_SAVING_METHOD</param-name>
